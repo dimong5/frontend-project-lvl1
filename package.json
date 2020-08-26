@@ -4,7 +4,7 @@
   },
   "type": "module",
   "name": "brain-games",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "first project",
   "main": "index.js",
   "scripts": {
@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/dimong5/frontend-project-lvl1/issues"
   },
-  "homepage": "https://github.com/dimong5/frontend-project-lvl1#readme"
+  "homepage": "https://github.com/dimong5/frontend-project-lvl1#readme",
+  "devDependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
