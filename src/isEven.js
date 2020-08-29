@@ -17,7 +17,6 @@ export default () => {
     const currentNum = getRandom(minNum, maxNum);
     const correctAnswer = evenOdd(currentNum);
     console.log('Question: ', currentNum);
-    console.log(currentNum);
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
