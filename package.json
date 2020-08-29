@@ -1,10 +1,11 @@
 {
   "bin": {
-    "brain-games": "bin/brain-games.js"
+    "brain-games": "bin/brain-games.js",
+    "brain-even": "bin/brain-even.js"
   },
   "type": "module",
   "name": "brain-games",
-  "version": "0.2.0",
+  "version": "0.5.0",
   "description": "first project",
   "main": "index.js",
   "scripts": {
