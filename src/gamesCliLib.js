@@ -11,9 +11,3 @@ export const wrongArnswerMessage = (userAnswer, correctAnswer, userName) => {
   console.log(`Let's try again, ${userName}!`);
   return null;
 };
-export const gameRules = (gameNum) => {
-  const rules = [];
-  rules[0] = 'Answer "yes" if the number is even, otherwise answer "no".';
-  return console.log(rules[gameNum]);
-};
-
