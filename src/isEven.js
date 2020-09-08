@@ -1,13 +1,13 @@
-import pkg from '@hexlet/pairs';
-import { engine, evenOdd, getRandom } from './gamesLib.js';
+import pairs from '@hexlet/pairs';
+import engine from './engine.js';
+import getRandom from './utils.js';
 
-const { cons } = pkg;
+const { cons } = pairs;
 const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
-export const isEvenGame = () => {
-  const minNum = 0;
-  const maxNum = 100;
-  const currentQuestion = getRandom(minNum, maxNum);
-  const correctAnswer = evenOdd(currentQuestion);
+const evenOdd = (num) => num % 2 === 0;
+const isEvenGame = () => {
+  const currentQuestion = getRandom(0, 100);
+  const correctAnswer = evenOdd(currentQuestion) ? 'yes' : 'no';
   return cons(currentQuestion, correctAnswer);
 };
 export default () => {

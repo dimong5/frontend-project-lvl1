@@ -1,20 +1,21 @@
-import pkg from '@hexlet/pairs';
-import { engine, getRandom } from './gamesLib.js';
+import pairs from '@hexlet/pairs';
+import engine from './engine.js';
+import getRandom from './utils.js';
 
-const { cons } = pkg;
+const { cons } = pairs;
 const calc = () => {
-  const aOper = getRandom(0, 10);
-  const bOper = getRandom(0, 10);
-  const rand = getRandom(0, 2);
+  const leftOperand = getRandom(0, 10);
+  const rightOperand = getRandom(0, 10);
+  const randomOperator = getRandom(0, 2);
   let mathOperator = '';
   let currentAnswer;
-  switch (rand) {
-    case 0: mathOperator = '+'; currentAnswer = aOper + bOper; break;
-    case 1: mathOperator = '-'; currentAnswer = aOper - bOper; break;
-    case 2: mathOperator = '*'; currentAnswer = aOper * bOper; break;
+  switch (randomOperator) {
+    case 0: mathOperator = '+'; currentAnswer = leftOperand + rightOperand; break;
+    case 1: mathOperator = '-'; currentAnswer = leftOperand - rightOperand; break;
+    case 2: mathOperator = '*'; currentAnswer = leftOperand * rightOperand; break;
     default: return 'Error!';
   }
-  const currentQuestion = `${aOper} ${mathOperator} ${bOper}`;
+  const currentQuestion = `${leftOperand} ${mathOperator} ${rightOperand}`;
   return cons(currentQuestion, String(currentAnswer));
 };
 const rules = 'What is the result of the expression?';
