@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-import userGreet from '../src/cli.js';
+import { getUserInput, sendForOutput } from '../src/cli.js';
 
-console.log('Welcome to the Brain Games!');
-userGreet();
+sendForOutput('Welcome to the Brain Games!');
+const userName = getUserInput('May I have your name? ');
+sendForOutput(`Hello, ${userName}!`);

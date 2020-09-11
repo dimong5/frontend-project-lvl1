@@ -1,6 +1,6 @@
 import pairs from '@hexlet/pairs';
 import engine from './engine.js';
-import getRandom from './utils.js';
+import { getRandom } from './utils.js';
 
 const { cons } = pairs;
 const rules = 'What number is missing in the progression?';
