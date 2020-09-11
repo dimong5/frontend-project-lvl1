@@ -1,6 +1,6 @@
 import pairs from '@hexlet/pairs';
-import engine from './engine.js';
-import { getRandom, evenOdd } from './utils.js';
+import engine from '../engine.js';
+import { getRandom, evenOdd } from '../utils.js';
 
 const { cons } = pairs;
 const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
