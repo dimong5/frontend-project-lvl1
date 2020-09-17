@@ -1,33 +1,27 @@
 import pairs from '@hexlet/pairs';
 import { getUserInput, sendForOutput } from './cli.js';
 
-const { car, cdr } = pairs;
-export default (func, rules) => {
-  const welcomeMessage = 'Welcome to the Brain Games!';
-  sendForOutput(welcomeMessage);
-  const nameQuery = 'May I have your name? ';
-  const userName = getUserInput(nameQuery);
-  const helloMessage = `Hello, ${userName}!`;
-  sendForOutput(helloMessage);
+export default (gameModule, rules) => {
+  sendForOutput('Welcome to the Brain Games!');
+  const userName = getUserInput('May I have your name? ');
+  sendForOutput(`Hello, ${userName}!`);
   let counter = 0;
   sendForOutput(rules);
-  while (counter <= 2) {
-    const gameData = func();
-    const currentQuestion = car(gameData);
-    const correctAnswer = cdr(gameData);
+  const roundsQuantity = 2;
+  while (counter <= roundsQuantity) {
+    const gameData = gameModule();
+    const currentQuestion = pairs.car(gameData);
+    const correctAnswer = pairs.cdr(gameData);
     sendForOutput(`Question: ${currentQuestion}`);
-    const userAnswerQuery = 'Your answer: ';
-    const userAnswer = getUserInput(userAnswerQuery);
+    const userAnswer = getUserInput('Your answer: ');
     if (userAnswer === correctAnswer) {
       sendForOutput('Correct!');
       counter += 1;
+      if (counter === 3) sendForOutput(`Congratulations, ${userName}!`);
     } else {
-      const wrongAnswerMessage = `"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`;
-      const tryAgainMessage = `Let's try again, ${userName}!`;
-      sendForOutput(wrongAnswerMessage);
-      sendForOutput(tryAgainMessage);
+      sendForOutput(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
+      sendForOutput(`Let's try again, ${userName}!`);
       break;
     }
   }
-  if (counter === 3) sendForOutput(`Congratulations, ${userName}!`);
 };

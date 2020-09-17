@@ -1,14 +1,13 @@
 import pairs from '@hexlet/pairs';
 import engine from '../engine.js';
-import { getRandom, evenOdd } from '../utils.js';
+import getRandomNumber from '../utils.js';
 
-const { cons } = pairs;
 const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
-
+const isEven = (num) => num % 2 === 0;
 const isEvenGame = () => {
-  const currentQuestion = getRandom(0, 100);
-  const correctAnswer = evenOdd(currentQuestion) ? 'yes' : 'no';
-  return cons(currentQuestion, correctAnswer);
+  const currentQuestion = getRandomNumber(0, 100);
+  const correctAnswer = isEven(currentQuestion) ? 'yes' : 'no';
+  return pairs.cons(currentQuestion, correctAnswer);
 };
 export default () => {
   engine(isEvenGame, rules);

@@ -1,22 +1,19 @@
 import pairs from '@hexlet/pairs';
 import engine from '../engine.js';
-import { getRandom } from '../utils.js';
-
-const { cons } = pairs;
+import getRandomNumber from '../utils.js';
 
 const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-const isPrime = () => {
-  const numberToBeChecked = getRandom(2, 100);
-  let checker = true;
-  for (let divisor = numberToBeChecked - 1; divisor >= 2; divisor -= 1) {
-    if (!(numberToBeChecked % divisor)) {
-      checker = false;
-      break;
-    }
-  }
-  const currentAnswer = checker ? 'yes' : 'no';
-  return cons(numberToBeChecked, currentAnswer);
+const isPrime = (num, divider) => {
+  if (num === 2) return true;
+  if (num % divider === 0) return false;
+  if (divider < num / 2) return isPrime(num, divider + 1);
+  return true;
+};
+const getQuestionAndAnswer = () => {
+  const numberToBeChecked = getRandomNumber(2, 100);
+  const currentAnswer = isPrime(numberToBeChecked, 2) ? 'yes' : 'no';
+  return pairs.cons(numberToBeChecked, currentAnswer);
 };
 export default () => {
-  engine(isPrime, rules);
+  engine(getQuestionAndAnswer, rules);
 };

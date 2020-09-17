@@ -1,12 +1,11 @@
 import pairs from '@hexlet/pairs';
 import engine from '../engine.js';
-import { getRandom } from '../utils.js';
+import getRandomNumber from '../utils.js';
 
-const { cons } = pairs;
-const calc = () => {
-  const leftOperand = getRandom(0, 10);
-  const rightOperand = getRandom(0, 10);
-  const randomOperator = getRandom(0, 2);
+const getQuestionAndAnswer = () => {
+  const leftOperand = getRandomNumber(0, 10);
+  const rightOperand = getRandomNumber(0, 10);
+  const randomOperator = getRandomNumber(0, 2);
   let mathOperator = '';
   let currentAnswer;
   switch (randomOperator) {
@@ -16,9 +15,9 @@ const calc = () => {
     default: return 'Error!';
   }
   const currentQuestion = `${leftOperand} ${mathOperator} ${rightOperand}`;
-  return cons(currentQuestion, String(currentAnswer));
+  return pairs.cons(currentQuestion, String(currentAnswer));
 };
 const rules = 'What is the result of the expression?';
 export default () => {
-  engine(calc, rules);
+  engine(getQuestionAndAnswer, rules);
 };
