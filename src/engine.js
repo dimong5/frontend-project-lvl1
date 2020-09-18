@@ -7,8 +7,8 @@ export default (gameModule, rules) => {
   sendForOutput(`Hello, ${userName}!`);
   let counter = 0;
   sendForOutput(rules);
-  const roundsQuantity = 2;
-  while (counter <= roundsQuantity) {
+  const roundsQuantity = 3;
+  while (counter < roundsQuantity) {
     const gameData = gameModule();
     const currentQuestion = pairs.car(gameData);
     const correctAnswer = pairs.cdr(gameData);
@@ -17,11 +17,11 @@ export default (gameModule, rules) => {
     if (userAnswer === correctAnswer) {
       sendForOutput('Correct!');
       counter += 1;
-      if (counter === 3) sendForOutput(`Congratulations, ${userName}!`);
     } else {
       sendForOutput(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
       sendForOutput(`Let's try again, ${userName}!`);
-      break;
+      return;
     }
   }
+  sendForOutput(`Congratulations, ${userName}!`);
 };

@@ -2,22 +2,30 @@ import pairs from '@hexlet/pairs';
 import engine from '../engine.js';
 import getRandomNumber from '../utils.js';
 
-const getQuestionAndAnswer = () => {
-  const leftOperand = getRandomNumber(0, 10);
-  const rightOperand = getRandomNumber(0, 10);
-  const randomOperator = getRandomNumber(0, 2);
-  let mathOperator = '';
-  let currentAnswer;
-  switch (randomOperator) {
-    case 0: mathOperator = '+'; currentAnswer = leftOperand + rightOperand; break;
-    case 1: mathOperator = '-'; currentAnswer = leftOperand - rightOperand; break;
-    case 2: mathOperator = '*'; currentAnswer = leftOperand * rightOperand; break;
-    default: return 'Error!';
+const getAnswer = (operator, operand1, operand2) => {
+  switch (operator) {
+    case '+': return operand1 + operand2;
+    case '-': return operand1 - operand2;
+    case '*': return operand1 * operand2;
+    default: throw new Error(`Error! Operator unknown ${operator}`);
   }
-  const currentQuestion = `${leftOperand} ${mathOperator} ${rightOperand}`;
+};
+
+const getQuestionAndAnswer = () => {
+  const operand1 = getRandomNumber(0, 10);
+  const operand2 = getRandomNumber(0, 10);
+  const opetarors = ['+', '-', '*'];
+  const operatorIndex = getRandomNumber(0, opetarors.length - 1);
+  const operator = opetarors[operatorIndex];
+
+  const currentAnswer = getAnswer(operator, operand1, operand2);
+  const currentQuestion = `${operand1} ${operator} ${operand2}`;
+
   return pairs.cons(currentQuestion, String(currentAnswer));
 };
-const rules = 'What is the result of the expression?';
+
+const rule = 'What is the result of the expression?';
+
 export default () => {
-  engine(getQuestionAndAnswer, rules);
+  engine(getQuestionAndAnswer, rule);
 };
