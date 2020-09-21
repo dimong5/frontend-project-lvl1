@@ -1,4 +1,5 @@
 name: CI
+
 on:
   - push
   - pull_request
@@ -6,14 +7,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install dependencies
-          run: |
-            make install
+      - name: "Install dependencies"
+        run: "make install"
 
-      - name: Run linter
-          run: |
-            make lint
+      - name: "Run linter"
+        run: "make lint"
+
