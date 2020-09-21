@@ -1,24 +1,27 @@
 import pairs from '@hexlet/pairs';
-import engine from '../engine.js';
-import getRandomNumber from '../utils.js';
+import runEngine from '../index.js';
+import { getRandomNumber } from '../utils.js';
 
 const rule = 'What number is missing in the progression?';
-const getProgression = (lenght, start, step, secret) => {
+const getProgression = (progressionLength, start, step) => {
   const progression = [];
   progression.push(start);
-  for (let i = 1; i < lenght; i += 1) {
+  for (let i = 0; i <= progressionLength; i += 1) {
     progression.push(start + step * i);
   }
-  progression[secret] = '..';
   return progression;
 };
-const getQuestionAnswerAnd = () => {
-  const length = 10;
+
+const progressionLength = 10;
+
+const getQuestionAndAnswer = () => {
   const start = getRandomNumber(0, 100);
   const step = getRandomNumber(1, 5);
-  const secret = getRandomNumber(0, length - 1);
+  const progression = getProgression(progressionLength, start, step);
 
-  const progression = getProgression(length, start, step, secret);
+  const secretElementIndex = getRandomNumber(0, progressionLength - 1);
+  progression[secretElementIndex] = '..';
+
   const secretIndex = progression.indexOf('..');
   const currentAnswer = start + secretIndex * step;
   const currentQuestion = progression.join(' ');
@@ -26,5 +29,5 @@ const getQuestionAnswerAnd = () => {
   return pairs.cons(currentQuestion, String(currentAnswer));
 };
 export default () => {
-  engine(getQuestionAnswerAnd, rule);
+  runEngine(getQuestionAndAnswer, rule);
 };

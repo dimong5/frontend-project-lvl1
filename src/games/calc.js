@@ -1,6 +1,6 @@
 import pairs from '@hexlet/pairs';
-import engine from '../engine.js';
-import getRandomNumber from '../utils.js';
+import runEngine from '../index.js';
+import { getRandomNumber } from '../utils.js';
 
 const getAnswer = (operator, operand1, operand2) => {
   switch (operator) {
@@ -27,5 +27,5 @@ const getQuestionAndAnswer = () => {
 const rule = 'What is the result of the expression?';
 
 export default () => {
-  engine(getQuestionAndAnswer, rule);
+  runEngine(getQuestionAndAnswer, rule);
 };

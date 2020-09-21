@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-export const getUserInput = (msg) => readlineSync.question(msg);
-export const sendForOutput = (msg) => {
+export const askQuestion = (msg) => readlineSync.question(msg);
+export const print = (msg) => {
   console.log(msg);
 };
