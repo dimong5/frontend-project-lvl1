@@ -18,10 +18,10 @@ const getQuestionAndAnswer = () => {
   const operatorIndex = getRandomNumber(0, opetarors.length - 1);
   const operator = opetarors[operatorIndex];
 
-  const currentAnswer = getAnswer(operator, operand1, operand2);
-  const currentQuestion = `${operand1} ${operator} ${operand2}`;
+  const answer = getAnswer(operator, operand1, operand2);
+  const question = `${operand1} ${operator} ${operand2}`;
 
-  return pairs.cons(currentQuestion, String(currentAnswer));
+  return pairs.cons(question, String(answer));
 };
 
 const rule = 'What is the result of the expression?';

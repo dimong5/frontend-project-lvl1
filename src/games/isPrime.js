@@ -11,8 +11,8 @@ const isPrime = (num, divider) => {
 };
 const getQuestionAndAnswer = () => {
   const numberToBeChecked = getRandomNumber(1, 100);
-  const currentAnswer = isPrime(numberToBeChecked, 2) ? 'yes' : 'no';
-  return pairs.cons(numberToBeChecked, currentAnswer);
+  const answer = isPrime(numberToBeChecked, 2) ? 'yes' : 'no';
+  return pairs.cons(numberToBeChecked, answer);
 };
 export default () => {
   runEngine(getQuestionAndAnswer, rule);

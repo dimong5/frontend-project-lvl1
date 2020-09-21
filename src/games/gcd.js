@@ -13,9 +13,9 @@ const getGcd = (a, b) => {
 const getQuestionAndAnswer = () => {
   const firstNumber = getRandomNumber(1, 50);
   const secondNumber = getRandomNumber(1, 50);
-  const currentQuestion = `${firstNumber} ${secondNumber}`;
-  const currentAnswer = getGcd(firstNumber, secondNumber);
-  return pairs.cons(currentQuestion, String(currentAnswer));
+  const question = `${firstNumber} ${secondNumber}`;
+  const answer = getGcd(firstNumber, secondNumber);
+  return pairs.cons(question, String(answer));
 };
 export default () => {
   runEngine(getQuestionAndAnswer, rule);
