@@ -1,33 +1,32 @@
-<h1>Brain-Games</h1>
+#Brain Games
 
 <a href="https://codeclimate.com/github/dimong5/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/764945c4b88258bedc67/maintainability" /></a>
-![CI](https://github.com/dimong5/frontend-project-lvl1/workflows/CI/badge.svg) <br>
-<h3>Install</h3>
-<pre>$ make install</pre>
+[![CI](https://github.com/dimong5/frontend-project-lvl1/workflows/CI/badge.svg)](https://github.com/dimong5/frontend-project-lvl1/actions)
 
-[![asciicast](https://asciinema.org/a/EYzFQ8zQseLRYLIDakulwUjX5.svg)](https://asciinema.org/a/EYzFQ8zQseLRYLIDakulwUjX5) 
-<br>
-<h3>Is a number even or odd?</h3>
-<pre>$ brain-even</pre>
+##Install
+    $ make install
 
-[![asciicast](https://asciinema.org/a/gOdXrgE4lhhBiUAOtpFgOqjt7.svg)](https://asciinema.org/a/gOdXrgE4lhhBiUAOtpFgOqjt7) <br>
-<br>
-<h3>Calculator game</h3>
-<pre>$ brain-calc</pre>
+##brain-even
+    $ make brain-even
 
-[![asciicast](https://asciinema.org/a/zNfeHi0NIgWbXban830szQvnE.svg)](https://asciinema.org/a/zNfeHi0NIgWbXban830szQvnE) <br>
-<br>
-<h3>Find greatest common divisor</h3>
-<pre>$ brain-gcd</pre>
+[![asciicast](https://asciinema.org/a/DkvzRyfPJvbwnzmNIpAvEppIN.svg)](https://asciinema.org/a/DkvzRyfPJvbwnzmNIpAvEppIN)
 
-[![asciicast](https://asciinema.org/a/qqlVSlEMUxt8Po1eww6A5dit1.svg)](https://asciinema.org/a/qqlVSlEMUxt8Po1eww6A5dit1) <br>
-<br>
-<h3>Find missing number in progression</h3>
-<pre>$ brain-progression</pre>
+##brain-calc
+    $ make brain-calc
 
-[![asciicast](https://asciinema.org/a/c7swrIGAwYx26S016u5Ka1cT3.svg)](https://asciinema.org/a/c7swrIGAwYx26S016u5Ka1cT3) <br>
-<br>
-<h3>Is a number even prime?</h3>
-<pre>$ brain-prime</pre>
+[![asciicast](https://asciinema.org/a/zwbHIz9ihUAl2EOhxaoaV4kiE.svg)](https://asciinema.org/a/zwbHIz9ihUAl2EOhxaoaV4kiE)
 
-[![asciicast](https://asciinema.org/a/VzlXIl4ekKGdL2MZpnr8SRpOS.svg)](https://asciinema.org/a/VzlXIl4ekKGdL2MZpnr8SRpOS) <br>
+##brain-gcd
+    $ make brain-gcd
+
+[![asciicast](https://asciinema.org/a/V3BrloU3n8VqOprfSP8WAdxWC.svg)](https://asciinema.org/a/V3BrloU3n8VqOprfSP8WAdxWC)
+
+##brain-progression
+    $ make brain-progression
+
+[![asciicast](https://asciinema.org/a/xOv5U3imBelzLwIVIjdRyoicO.svg)](https://asciinema.org/a/xOv5U3imBelzLwIVIjdRyoicO)
+
+##brain-prime
+    $ make brain-prime
+
+[![asciicast](https://asciinema.org/a/W8VG2flL4aPF5brpWT3QgBto2.svg)](https://asciinema.org/a/W8VG2flL4aPF5brpWT3QgBto2) 
