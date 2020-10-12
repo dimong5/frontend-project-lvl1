@@ -1,19 +1,19 @@
 import pairs from '@hexlet/pairs';
-import { askQuestion, print } from './cli.js';
+import { ask, print } from './cli.js';
 
 const roundsQuantity = 3;
 
-export default (gameModule, rules) => {
+export default (getQuestionAndAnswer, rule) => {
   print('Welcome to the Brain Games!');
-  const userName = askQuestion('May I have your name? ');
+  const userName = ask('May I have your name? ');
   print(`Hello, ${userName}!`);
-  print(rules);
+  print(rule);
   for (let i = 0; i < roundsQuantity; i += 1) {
-    const gameData = gameModule();
+    const gameData = getQuestionAndAnswer();
     const currentQuestion = pairs.car(gameData);
     const correctAnswer = pairs.cdr(gameData);
     print(`Question: ${currentQuestion}`);
-    const userAnswer = askQuestion('Your answer: ');
+    const userAnswer = ask('Your answer: ');
     if (userAnswer === correctAnswer) {
       print('Correct!');
     } else {

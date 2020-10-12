@@ -5,9 +5,9 @@ import { getRandomNumber } from '../utils.js';
 const progressionLength = 10;
 
 const rule = 'What number is missing in the progression?';
-const getProgression = (progressionLength, start, step) => {
+const getProgression = (length, start, step) => {
   const progression = [];
-  for (let i = 0; i <= progressionLength; i += 1) {
+  for (let i = 0; i <= length; i += 1) {
     progression.push(start + step * i);
   }
   return progression;
